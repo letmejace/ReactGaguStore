@@ -42,6 +42,8 @@ export const services = [
   },
 ]
 
+// 상품목록 API
 export const products_url = 'https://course-api.com/react-store-products'
 
+// 개별상품 API
 export const single_product_url = `https://course-api.com/react-store-single-product?id=`

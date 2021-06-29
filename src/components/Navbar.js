@@ -9,7 +9,34 @@ import { useProductsContext } from '../context/products_context'
 import { useUserContext } from '../context/user_context'
 
 const Nav = () => {
-  return <h4>navbar</h4>
+  const {openSidebar} = useProductsContext()
+  return (
+    <NavContainer>
+      <div className="nav-center">
+        <div className="nav-header">
+          {/* logo클릭시 홈으로 */}
+          <Link to='/'>
+            <img src={logo} alt="comfy" />
+          </Link>
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
+            <FaBars />
+          </button>
+        </div>
+        <ul className="nav-links">
+          {/* utils/constants.js안에 array를 만들어 가져와서 map */}
+          {links.map((link) => {
+            const { id, text, url} =link
+            return (
+              <li key={id}>
+                <Link to={url}>{text}</Link>
+              </li>
+            )
+          })}
+        </ul>
+        <CartButtons />
+      </div>
+    </NavContainer>
+  )
 }
 
 const NavContainer = styled.nav`

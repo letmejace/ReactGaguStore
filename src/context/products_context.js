@@ -13,13 +13,37 @@ import {
   GET_SINGLE_PRODUCT_ERROR,
 } from '../actions'
 
-const initialState = {}
+// Sidebar 기본적으로 닫힘
+const initialState = {
+  isSidebarOpen: false,
+}
 
 const ProductsContext = React.createContext()
 
 export const ProductsProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState)
+ 
+  // 클릭시 Sidebar 열기
+  const openSidebar = () =>{
+    dispatch({ type: SIDEBAR_OPEN })
+  }
+  // 클릭시 Sidebar 닫기
+  const closeSidebar = () =>{
+    dispatch({ type: SIDEBAR_CLOSE })
+  }
+
+  // 상품 목록 API가져오기
+  const fetchProducts = async (url) => {
+    const response = await axios.get(url)
+  }
+
+  // 상품 목록이 화면에 한번만 출력되도록
+  useEffect(() => {
+    fetchProducts(url)
+  },[])
+
   return (
-    <ProductsContext.Provider value='products context'>
+    <ProductsContext.Provider value={{ ...state, openSidebar, closeSidebar}}>
       {children}
     </ProductsContext.Provider>
   )

@@ -13,12 +13,12 @@ import {
   About,
   Products,
   PrivateRoute,
-  AuthWrapper,
+  // AuthWrapper,
 } from './pages'
 
 function App() {
   return (
-    <AuthWrapper>
+    // <AuthWrapper>
       <Router>
         <Navbar />
         <Sidebar />
@@ -35,17 +35,16 @@ function App() {
           <Route exact path='/products'>
             <Products />
           </Route>
-          <Route exact path='/products/:id' children={<SingleProduct />} />
-          <PrivateRoute exact path='/checkout'>
+          <Route exact path='/checkout'>
             <Checkout />
-          </PrivateRoute>
-          <Route path='*'>
+          </Route>
+          <Route>
             <Error />
           </Route>
         </Switch>
         <Footer />
       </Router>
-    </AuthWrapper>
+    // </AuthWrapper>
   )
 }
 
