@@ -16,6 +16,10 @@ import {
 // Sidebar 기본적으로 닫힘
 const initialState = {
   isSidebarOpen: false,
+  products_loading: false,
+  products_error:false,
+  products:[],
+  featured_products:[],
 }
 
 const ProductsContext = React.createContext()
@@ -34,7 +38,15 @@ export const ProductsProvider = ({ children }) => {
 
   // 상품 목록 API가져오기
   const fetchProducts = async (url) => {
-    const response = await axios.get(url)
+    dispatch({ type: GET_PRODUCTS_BEGIN })
+    try {
+      const response = await axios.get(url)
+      const products = response.data
+      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products})
+    // 에러발생시 ERROR action실행
+    } catch (error) {
+      dispatch({ type: GET_SINGLE_PRODUCT_ERROR})
+    }
   }
 
   // 상품 목록이 화면에 한번만 출력되도록

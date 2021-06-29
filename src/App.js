@@ -35,10 +35,13 @@ function App() {
           <Route exact path='/products'>
             <Products />
           </Route>
+          {/* API목록 각각 하나씩 표시 */}
+          <Route exact path='/products/:id' children=
+          {<SingleProduct />} />
           <Route exact path='/checkout'>
             <Checkout />
           </Route>
-          <Route>
+          <Route path='*'>
             <Error />
           </Route>
         </Switch>
