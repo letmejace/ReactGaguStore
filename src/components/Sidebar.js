@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/logo.svg'
+import logo from '../assets/gagu.png'
 import { Link } from 'react-router-dom'
 import { useProductsContext } from '../context/products_context'
 import { FaTimes } from 'react-icons/fa'
@@ -73,7 +73,7 @@ const SidebarContainer = styled.div`
   }
   .logo {
     justify-self: center;
-    height: 45px;
+    height: 100px;
   }
   .links {
     margin-bottom: 2rem;

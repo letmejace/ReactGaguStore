@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import heroBcg from '../assets/hero-bcg.jpeg'
-import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import heroBcg from '../assets/blue.jpg'
+import heroBcg2 from '../assets/furn.jpg'
 
 const Hero = () => {
   // 메인화면 hero-components구성
@@ -14,7 +14,8 @@ const Hero = () => {
           comfort zone
         </h1>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus provident laboriosam expedita assumenda perferendis obcaecati tenetur reprehenderit labore, quidem repellat, non magnam rem, sit ullam sint reiciendis minus ut? Impedit.
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus provident laboriosam expedita assumenda perferendis obcaecati tenetur reprehenderit labore, 
+          quidem repellat, non magnam rem, sit ullam sint reiciendis minus ut? Impedit.
         </p>
         <Link to='/products' className='btn hero-btn'>
           shop now
@@ -57,6 +58,7 @@ const Wrapper = styled.section`
     .hero-btn {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
+      color: var(--clr-primary-1);
     }
     .img-container {
       display: block;
@@ -83,7 +85,7 @@ const Wrapper = styled.section`
       position: absolute;
       width: 10%;
       height: 80%;
-      background: var(--clr-primary-9);
+      background: var(--clr-custom-3);
       bottom: 0%;
       left: -8%;
       border-radius: var(--radius);

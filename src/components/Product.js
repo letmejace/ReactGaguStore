@@ -16,7 +16,8 @@ const Product = ({ image, name, price, id  }) => {
     <footer>
       {/* 이름/ 가격 표시 */}
       <h5>{name}</h5>
-      <p>{price + 30000 - 999 }원</p>
+      {/* 가격 맞추기위해 +(39001) // 한국단위 돈 표시 */}
+      <p>￦{(price+(39001)).toLocaleString('ko-KR') }</p>
     </footer>
   </Wrapper>
 }
@@ -73,7 +74,7 @@ const Wrapper = styled.article`
   }
 
   footer p {
-    color: var(--clr-primary-5);
+    color: var(--clr-custom-4);
     letter-spacing: var(--spacing);
   }
 `

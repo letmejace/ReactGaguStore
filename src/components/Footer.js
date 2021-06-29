@@ -6,7 +6,7 @@ const Footer = () => {
       <h5>
         {/* 현재년도 가져오기 */}
         &copy; {new Date().getFullYear()}
-        <span> Comfy</span>
+        <span> Gagu Store</span>
       </h5>
       <h5> All rights reserved</h5>
     </Wrapper>
