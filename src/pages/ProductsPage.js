@@ -2,8 +2,25 @@ import React from 'react'
 import styled from 'styled-components'
 import { Filters, ProductList, Sort, PageHero } from '../components'
 
+// 상품 페이지
 const ProductsPage = () => {
-  return <h4>products page</h4>
+  return (
+    <main>
+      <PageHero title='products' />
+      <Wrapper className='page'>
+        <div className='section-center products'>
+          {/* 필터 */}
+          <Filters />
+          <div>
+            {/* 정렬 */}
+            <Sort />
+            {/* 상품 목록 */}
+            <ProductList />
+          </div>
+        </div>
+      </Wrapper>
+    </main>
+  )
 }
 
 const Wrapper = styled.div`

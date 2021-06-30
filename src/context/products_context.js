@@ -17,9 +17,9 @@ import {
 const initialState = {
   isSidebarOpen: false,
   products_loading: false,
-  products_error:false,
-  products:[],
-  featured_products:[],
+  products_error: false,
+  products: [],
+  featured_products: [],
   single_product_loading: false,
   single_product_error: false,
   single_product: {},
@@ -29,13 +29,13 @@ const ProductsContext = React.createContext()
 
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
- 
+
   // 클릭시 Sidebar 열기
-  const openSidebar = () =>{
+  const openSidebar = () => {
     dispatch({ type: SIDEBAR_OPEN })
   }
   // 클릭시 Sidebar 닫기
-  const closeSidebar = () =>{
+  const closeSidebar = () => {
     dispatch({ type: SIDEBAR_CLOSE })
   }
 
@@ -45,34 +45,34 @@ export const ProductsProvider = ({ children }) => {
     try {
       const response = await axios.get(url)
       const products = response.data
-      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products})
-    // 에러발생시 ERROR action실행
+      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products })
+      // 에러발생시 ERROR action실행
     } catch (error) {
-      dispatch({ type: GET_PRODUCTS_ERROR})
+      dispatch({ type: GET_PRODUCTS_ERROR })
     }
   }
 
   // 싱글목록 
   const fetchSingleProduct = async (url) => {
-    dispatch({type:GET_SINGLE_PRODUCT_BEGIN});
+    dispatch({ type: GET_SINGLE_PRODUCT_BEGIN })
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url)
       const singleProduct = response.data
-      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload:
-      singleProduct})
+      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct })
     } catch (error) {
-      dispatch({type:GET_SINGLE_PRODUCT_ERROR})
+      dispatch({ type: GET_SINGLE_PRODUCT_ERROR })
     }
   }
 
   // 상품 목록이 화면에 한번만 출력되도록
   useEffect(() => {
     fetchProducts(url)
-  },[])
+  }, [])
 
   return (
-    <ProductsContext.Provider value={{ ...state, 
-      openSidebar, closeSidebar, fetchSingleProduct}}>
+    <ProductsContext.Provider
+      value={{ ...state, openSidebar, closeSidebar, fetchSingleProduct }}
+    >
       {children}
     </ProductsContext.Provider>
   )
