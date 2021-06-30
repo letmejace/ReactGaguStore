@@ -1,8 +1,26 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const ProductImages = () => {
-  return <h4>product images</h4>
+const ProductImages = ({ images = [{ url:''}] }) => {
+  const [main, setMain] = useState(images[0])
+  return <Wrapper>
+    <img src={main.url} alt="main image" className='main' />
+    <div className="gallery">
+      {/* 이미지 추가 */}
+      {images.map((image, index) => {
+        return( 
+          <img 
+            src={image.url} 
+            alt={image.filename}
+            key={index} 
+            onClick={() => setMain(images[index])}
+            // 이미지 클릭시 테두리
+            className={`${image.url === main.url ? 'active' : null}`}
+          />
+        )
+      })}
+    </div>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`
