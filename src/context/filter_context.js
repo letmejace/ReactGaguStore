@@ -17,7 +17,9 @@ const initialState = {
   filtered_products: [],
   all_products: [],
   grid_view: true,
+  // value랑 name같아야 함
   sort: 'price-lowest',
+  // filters 목록
   filters: {
     text: '',
     company: 'all',
@@ -40,14 +42,17 @@ export const FilterProvider = ({ children }) => {
     dispatch({ type: LOAD_PRODUCTS, payload: products })
   }, [products])
 
+  // Sort Function useEffect
   useEffect(() => {
     dispatch({ type: FILTER_PRODUCTS })
     dispatch({ type: SORT_PRODUCTS })
   }, [products, state.sort, state.filters])
 
+  // GridView
   const setGridView = () => {
     dispatch({ type: SET_GRIDVIEW })
   }
+  // ListView
   const setListView = () => {
     dispatch({ type: SET_LISTVIEW })
   }

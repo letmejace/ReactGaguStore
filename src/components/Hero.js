@@ -14,8 +14,12 @@ const Hero = () => {
           comfort zone
         </h1>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus provident laboriosam expedita assumenda perferendis obcaecati tenetur reprehenderit labore, 
-          quidem repellat, non magnam rem, sit ullam sint reiciendis minus ut? Impedit.
+          당신의 생활습관, 환경에 대한 이해와 전문성을 바탕으로 직접 설계하고, 
+          제대로 제조하는 기본에 충실한 혁신적 가구 새로운 디자인, 합리적인 가격의 
+          믿을 수 있는 품질로 저마다의 라이프 스타일에 따라 자유롭게 변화할 수 있는 
+          실용적이고 감각적인 가구.<br />
+          가구를 '제대로' 만드는 Gagu Store입니다.
+          <br />
         </p>
         <Link to='/products' className='btn hero-btn'>
           shop now
@@ -53,7 +57,7 @@ const Wrapper = styled.section`
       margin-bottom: 2rem;
     }
     p {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
     .hero-btn {
       padding: 0.75rem 1.5rem;

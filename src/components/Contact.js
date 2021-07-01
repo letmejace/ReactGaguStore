@@ -6,10 +6,12 @@ const Contact = () => {
   return (
     <Wrapper>
       <div className="section-center">
-        <h3>Join our newsletter and get 20% off</h3>
+        <h3>Gagu Store 회원가입시 20% 쿠폰 지급</h3>
         <div className="content">
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad provident consequuntur nemo accusantium accusamus optio quasi repellendus aut animi totam fugiat hic, sit ipsa distinctio velit maiores quidem ea reprehenderit!
+            멤버십 회원으로 최초 가입 시
+            20% 쿠폰 즉시 지급
+            (일부 상품 제외)
           </p>
           <form 
             className="contact-form"
@@ -23,7 +25,7 @@ const Contact = () => {
               name="_replyto"
             />
             <button type='submit' className="submit-btn">
-              subscribe
+              쿠폰받기
             </button>
           </form>
         </div>

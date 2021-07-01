@@ -3,7 +3,56 @@ import { useFilterContext } from '../context/filter_context'
 import { BsFillGridFill, BsList } from 'react-icons/bs'
 import styled from 'styled-components'
 const Sort = () => {
-  return <h4>sort </h4>
+  const {
+    filtered_products: products,
+    grid_view,
+    setGridView,
+    setListView,
+    sort,
+    updateSort,
+  } = useFilterContext()
+  return (
+    <Wrapper>
+      <div className='btn-container'>
+        {/* grid_view 버튼 */}
+        <button
+          type='button'
+          // grid_view가 treu라면 active 아니라면 null
+          className={`${grid_view ? 'active' : null}`}
+          onClick={setGridView}
+        >
+          <BsFillGridFill />
+        </button>
+        {/* ListView 버튼 */}
+        <button
+          type='button'
+          className={`${!grid_view ? 'active' : null}`}
+          onClick={setListView}
+        >
+          <BsList />
+        </button>
+      </div>
+      <p>{products.length}개 상품</p>
+      <hr />
+      {/* form 레이블 */}
+      <form>
+        <label htmlFor='sort'>정렬 :</label>
+        <select
+          name='sort'
+          id='sort'
+          className='sort-input'
+          value={sort}
+          onChange={updateSort}
+        >
+          {/* 가격/이름 정렬 */}
+          <option value='price-lowest'>가격 (낮은순)</option>
+          <option value='price-highest'>가격 (높은순)</option>
+          <option value='name-a'>상품명 (a-z)</option>
+          <option value='name-z'>상품명 (z-a)</option>
+        </select>
+      </form>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -31,7 +80,6 @@ const Wrapper = styled.section`
     text-transform: capitalize;
     margin-bottom: 0;
   }
-
   .btn-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -56,7 +104,6 @@ const Wrapper = styled.section`
       color: var(--clr-white);
     }
   }
-
   .sort-input {
     border-color: transparent;
     font-size: 1rem;

@@ -22,7 +22,7 @@ const FeaturedProducts = () => {
   return (
     <Wrapper className='section'>
       <div className="title">
-        <h2>featured products</h2>
+        <h2>특가상품</h2>
         <div className="underline"></div>
       </div>
       <div className="section-center featured">

@@ -20,8 +20,10 @@ function App() {
   return (
     // <AuthWrapper>
       <Router>
+        {/* Nav, SideBar모두 적용 */}
         <Navbar />
         <Sidebar />
+        {/* Switch로 페이지별로 분리 */}
         <Switch>
           <Route exact path='/'>
             <Home />
@@ -35,7 +37,7 @@ function App() {
           <Route exact path='/products'>
             <Products />
           </Route>
-          {/* API목록 각각 하나씩 표시 */}
+          {/* API목록 id별로 표시 */}
           <Route exact path='/products/:id' children=
           {<SingleProduct />} />
           <Route exact path='/checkout'>

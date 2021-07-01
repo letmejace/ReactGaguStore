@@ -7,12 +7,12 @@ const Services = () => {
     <Wrapper>
       <div className="section-center">
         <article className='header'>
-          <h3>
+          <h2>
             custom furniture <br />
             built only for you
-          </h3>
+          </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur dolorem quo fuga est dolorum perferendis atque nam, quis ratione officiis necessitatibus exercitationem id debitis, iusto alias laboriosam non beatae laudantium.
+            Gagu Store는 진정성 있는 가구를 만들기 위해 끊임없이 고민하고 연구합니다. 당신의 생활습관, 환경에 대한 이해와 전문성을 바탕으로 직접 설계하고, 제대로 제조하는 기본에 충실한 혁신적 가구 새로운 디자인, 합리적인 가격의 믿을 수 있는 품질로 저마다의 라이프 스타일에 따라 자유롭게 변화할 수 있는 실용적이고 감각적인 가구. 가구를 '제대로' 만드는 Gagu Store입니다.
           </p>
         </article>
         <div className="services-center">

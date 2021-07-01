@@ -9,6 +9,7 @@ import {
   CLEAR_FILTERS,
 } from '../actions'
 
+// filter reducer 
 const filter_reducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
     let maxPrice = action.payload.map((p) => p.price)
@@ -30,10 +31,12 @@ const filter_reducer = (state, action) => {
   if (action.type === UPDATE_SORT) {
     return { ...state, sort: action.payload }
   }
+  // 정렬 로직
   if (action.type === SORT_PRODUCTS) {
     const { sort, filtered_products } = state
     let tempProducts = [...filtered_products]
     if (sort === 'price-lowest') {
+      // sort Function사용
       tempProducts = tempProducts.sort((a, b) => {
         if (a.price < b.price) {
           return -1
@@ -48,6 +51,7 @@ const filter_reducer = (state, action) => {
       tempProducts = tempProducts.sort((a, b) => b.price - a.price)
     }
     if (sort === 'name-a') {
+      // localeCompare Function사용
       tempProducts = tempProducts.sort((a, b) => {
         return a.name.localeCompare(b.name)
       })
