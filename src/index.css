@@ -173,12 +173,12 @@ p {
   border-top-color: var(--clr-primary-5);
   animation: spinner 0.6s linear infinite;
 }
-
+/* 0.375rem 0.75rem; */
 .btn {
   text-transform: uppercase;
   background: var(--clr-primary-5);
   color: var(--clr-primary-1);
-  padding: 0.375rem 0.75rem;
+  padding: 0.4rem 1.25rem;
   letter-spacing: var(--spacing);
   display: inline-block;
   font-weight: 400;

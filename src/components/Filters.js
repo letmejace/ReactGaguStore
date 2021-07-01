@@ -46,8 +46,9 @@ const Filters = () => {
           {/* end search input */}
           {/* categories */}
           <div className='form-control'>
-            <h5>category</h5>
+            <h5>카테고리</h5>
             <div>
+              {/* c = category ShortCut */}
               {categories.map((c, index) => {
                 return (
                   <button
@@ -68,7 +69,7 @@ const Filters = () => {
           {/* end of categories */}
           {/* companies */}
           <div className='form-control'>
-            <h5>company</h5>
+            <h5>회사명</h5>
             <select
               name='company'
               value={company}
@@ -85,11 +86,9 @@ const Filters = () => {
             </select>
           </div>
           {/* end of companies */}
-          {/* 
-          colors
-          */}
+          {/* colors*/}
           <div className='form-control'>
-            <h5>colors</h5>
+            <h5>색상</h5>
             <div className='colors'>
               {colors.map((c, index) => {
                 if (c === 'all') {
@@ -124,12 +123,10 @@ const Filters = () => {
               })}
             </div>
           </div>
-          {/* 
-end of           colors
-          */}
+          {/* end of colors */}
           {/* price */}
           <div className='form-control'>
-            <h5>price</h5>
+            <h5>가격</h5>
             <p className='price'>{formatPrice(price)}</p>
             <input
               type='range'
@@ -143,7 +140,7 @@ end of           colors
           {/* end of price */}
           {/* shippping */}
           <div className='form-control shipping'>
-            <label htmlFor='shipping'> free shipping</label>
+            <label htmlFor='shipping'>무료배송</label>
             <input
               type='checkbox'
               name='shipping'
@@ -156,7 +153,7 @@ end of           colors
         </form>
         <button type='button' className='clear-btn' onClick={clearFilters}>
           {' '}
-          clear filters
+          초기화
         </button>
       </div>
     </Wrapper>

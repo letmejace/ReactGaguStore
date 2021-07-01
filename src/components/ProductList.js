@@ -9,7 +9,7 @@ const ProductList = () => {
   if (products.length < 1) {
     return (
       <h5 style={{ textTransform: 'none' }}>
-        Sorry, no products matched your search...
+        일치하는 상품이 없어요
       </h5>
     )
   }

@@ -7,6 +7,7 @@ export const formatPrice = (number) => {
   }).format(number / 100)
 }
 
+// flat() 사용해서 중첩된 array를 하나로 합체
 export const getUniqueValues = (data, type) => {
   let unique = data.map((item) => item[type])
   if (type === 'colors') {
