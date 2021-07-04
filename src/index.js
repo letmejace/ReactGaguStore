@@ -7,13 +7,14 @@ import { FilterProvider } from './context/filter_context'
 import { CartProvider } from './context/cart_context'
 import { UserProvider } from './context/user_context'
 import { Auth0Provider } from '@auth0/auth0-react'
-// dev-pu8wyk-g.us.auth0.com
-// 7vHgXJ01aWGyMVLWdZUwQSUapigdjfKu
+// dev-857nzob3.us.auth0.com
+// xDH31nObcrJKh0xoW6U5MuLE90GKAe2b
+
 ReactDOM.render(
   // Provider로 App감싸기
   <Auth0Provider
-    domain={process.env.REACT_APP_AUTH_DOMAIN}
-    clientId={process.env.REACT_APP_AUTH_CLIENT_ID}
+    domain='dev-857nzob3.us.auth0.com'
+    clientId='xDH31nObcrJKh0xoW6U5MuLE90GKAe2b'
     redirectUri={window.location.origin}
     cacheLocation='localstorage'
   >

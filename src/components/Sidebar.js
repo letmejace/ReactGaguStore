@@ -9,26 +9,24 @@ import CartButtons from './CartButtons'
 import { useUserContext } from '../context/user_context'
 
 const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar } = 
-    useProductsContext()
+  const { isSidebarOpen, closeSidebar } = useProductsContext()
+  const { myUser } = useUserContext()
 
   return (
-    <SidebarContainer >
-      {/* isOpen이 true라면 sidebar 열기, false라면 닫기 */}
-      <aside 
-        className={`${isSidebarOpen ? 'sidebar show-sidebar' :
-        'sidebar'}`}
+    <SidebarContainer>
+       {/* isOpen이 true라면 sidebar 열기, false라면 닫기 */}
+      <aside
+        className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
       >
         <div className='sidebar-header'>
-          <img src={logo} className='logo' alt='comfy' />
-          <button className="close-btn" type='button'
-            onClick={closeSidebar}>
+          <img src={logo} className='logo' alt='comfy sloth' />
+          <button className='close-btn' type='button' onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
-        <ul className="links">
+        <ul className='links'>
           {/* links 목록 가져오기 */}
-          {links.map(({id, text, url}) => {
+          {links.map(({ id, text, url }) => {
             return (
               <li key={id}>
                 <Link to={url} onClick={closeSidebar}>
@@ -37,11 +35,13 @@ const Sidebar = () => {
               </li>
             )
           })}
-          <li>
-            <Link to='/checkout' onClick={closeSidebar}>
-              check out
-            </Link>
-          </li>   
+          {myUser && (
+            <li>
+              <Link to='/checkout' onClick={closeSidebar}>
+                checkout
+              </Link>
+            </li>
+          )}
         </ul>
         {/* CartButtons component가져오기 */}
         <CartButtons />

@@ -10,8 +10,8 @@ const Hero = () => {
     <Wrapper className='section-center'>
       <article className='content'>
         <h1>
-          design your <br />
-          comfort zone
+          가구쇼핑의 시작은 <br />
+          GAGU Store,
         </h1>
         <p>
           당신의 생활습관, 환경에 대한 이해와 전문성을 바탕으로 직접 설계하고, 
@@ -35,6 +35,7 @@ const Hero = () => {
 }
 
 const Wrapper = styled.section`
+
   min-height: 60vh;
   display: grid;
   place-items: center;

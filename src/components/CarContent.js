@@ -6,9 +6,33 @@ import CartColumns from './CartColumns'
 import CartItem from './CartItem'
 import CartTotals from './CartTotals'
 
+// Cart 페이지
 const CartContent = () => {
-  return <h4>cart content </h4>
+  const { cart, clearCart } = useCartContext()
+  return (
+    <Wrapper className='section section-center'>
+      <CartColumns />
+      {cart.map((item) => {
+        return <CartItem key={item.id} {...item} />
+      })}
+      <hr />
+      <div className='link-container'>
+        <Link to='/products' className='link-btn'>
+          계속 쇼핑하기
+        </Link>
+        <button
+          type='button'
+          className='link-btn clear-btn'
+          onClick={clearCart}
+        >
+          초기화
+        </button>
+      </div>
+      <CartTotals />
+    </Wrapper>
+  )
 }
+
 const Wrapper = styled.section`
   .link-container {
     display: flex;

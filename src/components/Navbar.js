@@ -9,29 +9,36 @@ import { useProductsContext } from '../context/products_context'
 import { useUserContext } from '../context/user_context'
 
 const Nav = () => {
-  const {openSidebar} = useProductsContext()
+  const { openSidebar } = useProductsContext()
+  const { myUser } = useUserContext()
   return (
     <NavContainer>
-      <div className="nav-center">
-        <div className="nav-header">
-          {/* logo클릭시 홈으로 */}
+      <div className='nav-center'>
+        {/* logo클릭시 홈으로 */}
+        <div className='nav-header'>
           <Link to='/'>
-            <img src={logo} alt="comfy" />
+            <img src={logo} alt='comfy sloth' />
           </Link>
-          <button type="button" className="nav-toggle" onClick={openSidebar}>
+          <button type='button' className='nav-toggle' onClick={openSidebar}>
             <FaBars />
           </button>
         </div>
-        <ul className="nav-links">
-          {/* utils/constants.js안에 array를 만들어 가져와서 map */}
+        {/* utils/constants.js안에 array를 만들어 가져와서 map */}
+        <ul className='nav-links'>
           {links.map((link) => {
-            const { id, text, url} =link
+            const { id, text, url } = link
             return (
               <li key={id}>
                 <Link to={url}>{text}</Link>
               </li>
             )
           })}
+          {myUser && (
+            <li>
+              {/* 로그인 시에만 checkout표시 */}
+              <Link to='/checkout'>checkout</Link>
+            </li>
+          )}
         </ul>
         <CartButtons />
       </div>
@@ -44,7 +51,6 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-
   .nav-center {
     width: 90vw;
     margin: 0 auto;
@@ -57,7 +63,6 @@ const NavContainer = styled.nav`
     img {
       width: 175px;
       margin-left: -15px;
-      margin-top: 10px;
     }
   }
   .nav-toggle {
@@ -97,7 +102,7 @@ const NavContainer = styled.nav`
         letter-spacing: var(--spacing);
         padding: 0.5rem;
         &:hover {
-          border-bottom: 3px solid var(--clr-custom-1);
+          border-bottom: 2px solid var(--clr-primary-7);
         }
       }
     }

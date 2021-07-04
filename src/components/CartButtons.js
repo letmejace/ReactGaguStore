@@ -8,23 +8,36 @@ import { useUserContext } from '../context/user_context'
 
 const CartButtons = () => {
   const { closeSidebar } = useProductsContext()
-
+  const { total_items, clearCart } = useCartContext()
+  const { loginWithRedirect, myUser, logout } = useUserContext()
   return (
     <Wrapper className='cart-btn-wrapper'>
       <Link to='/cart' className='cart-btn' onClick={closeSidebar}>
         Cart
-        <span className="cart-container">
-          {/* 쇼핑카드 이미지 */}
+        <span className='cart-container'>
           <FaShoppingCart />
-          <span className="cart-value">2</span>
+          <span className='cart-value'>{total_items}</span>
         </span>
       </Link>
-      <button type='button' className="auth-btn">
-        로그인<FaUserPlus />
-      </button>
+      {myUser ? (
+        <button
+          type='button'
+          className='auth-btn'
+          onClick={() => {
+            clearCart()
+            localStorage.removeItem('user')
+            logout({ returnTo: window.location.origin })
+          }}
+        >
+          로그아웃 <FaUserMinus />
+        </button>
+      ) : (
+        <button type='button' className='auth-btn' onClick={loginWithRedirect}>
+          로그인 <FaUserPlus />
+        </button>
+      )}
     </Wrapper>
-  ) 
-  
+  )
 }
 
 const Wrapper = styled.div`
@@ -32,15 +45,14 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   width: 225px;
-
   .cart-btn {
     color: var(--clr-grey-1);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     letter-spacing: var(--spacing);
     color: var(--clr-grey-1);
     display: flex;
-
     align-items: center;
+    margin: 15px;
   }
   .cart-container {
     display: flex;
@@ -55,7 +67,7 @@ const Wrapper = styled.div`
     position: absolute;
     top: -10px;
     right: -16px;
-    background: var(--clr-custom-1);
+    background: var(--clr-primary-5);
     width: 16px;
     height: 16px;
     display: flex;

@@ -8,6 +8,7 @@ import {
   COUNT_CART_TOTALS,
 } from '../actions'
 
+// getLocalStorage에 저장
 const getLocalStorage = () => {
   let cart = localStorage.getItem('cart')
   if (cart) {
@@ -48,6 +49,7 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: CLEAR_CART })
   }
 
+  // localStorage 설정
   useEffect(() => {
     dispatch({ type: COUNT_CART_TOTALS })
     localStorage.setItem('cart', JSON.stringify(state.cart))
