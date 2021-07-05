@@ -21,7 +21,7 @@ const CartTotals = () => {
           <hr />
           <h4>
             총 주문금액 :{' '}
-            <span>￦{(total_amount + shipping_fee+(39001)).toLocaleString('ko-KR')}</span>
+            <span>￦{((total_amount+(39001)) + shipping_fee).toLocaleString('ko-KR')}</span>
           </h4>
         </article>
         {myUser ? (
