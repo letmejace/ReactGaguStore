@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { useProductsContext } from '../context/products_context'
 import { single_product_url as url } from '../utils/constants'
-import { formatPrice } from '../utils/helpers'
 import {
   Loading,
   Error,
@@ -67,7 +66,7 @@ const SingleProductPage = () => {
           <section className='content'>
             <h2>{name}</h2>
             <Stars stars={stars} reviews={reviews} />
-            <h5 className='price'> {formatPrice(price)}</h5>
+            <h5 className='price'> ￦{(price+(39001)).toLocaleString('ko-KR')}</h5>
             <p className='desc'> {description}</p>
             <p className='info'>
               <span>재고 : </span>

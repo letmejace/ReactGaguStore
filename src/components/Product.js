@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { formatPrice } from '../utils/helpers'
 import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
@@ -17,8 +16,7 @@ const Product = ({ image, name, price, id  }) => {
       {/* 이름/ 가격 표시 */}
       <h5>{name}</h5>
       {/* 가격 맞추기위해 +(39001) // 한국단위 돈 표시 */}
-      <p>{formatPrice(price)}</p>
-      {/* ￦{(price+(39001)).toLocaleString('ko-KR') } */}
+      <p>￦{(price+(39001)).toLocaleString('ko-KR')}</p>
     </footer>
   </Wrapper>
 }

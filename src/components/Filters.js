@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useFilterContext } from '../context/filter_context'
-import { getUniqueValues, formatPrice } from '../utils/helpers'
+import { getUniqueValues } from '../utils/helpers'
 import { FaCheck } from 'react-icons/fa'
 
 const Filters = () => {
@@ -127,7 +127,7 @@ const Filters = () => {
           {/* price */}
           <div className='form-control'>
             <h5>가격</h5>
-            <p className='price'>{formatPrice(price)}</p>
+            <p className='price'>￦{(price+(39001)).toLocaleString('ko-KR')}</p>
             <input
               type='range'
               name='price'

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { useCartContext } from '../context/cart_context'
 import { useUserContext } from '../context/user_context'
-import { formatPrice } from '../utils/helpers'
 import { Link } from 'react-router-dom'
 
 const CartTotals = () => {
@@ -14,15 +13,15 @@ const CartTotals = () => {
       <div>
         <article>
           <h5>
-            주문금액 : <span>{formatPrice(total_amount)}</span>
+            주문금액 : <span>￦{(total_amount+(39001)).toLocaleString('ko-KR')}</span>
           </h5>
           <p>
-            배송비 : <span>{formatPrice(shipping_fee)}</span>
+            배송비 : <span>￦{(shipping_fee).toLocaleString('ko-KR')}</span>
           </p>
           <hr />
           <h4>
             총 주문금액 :{' '}
-            <span>{formatPrice(total_amount + shipping_fee)}</span>
+            <span>￦{(total_amount + shipping_fee+(39001)).toLocaleString('ko-KR')}</span>
           </h4>
         </article>
         {myUser ? (

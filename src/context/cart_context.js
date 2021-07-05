@@ -23,7 +23,7 @@ const initialState = {
   total_items: 0,
   total_amount: 0,
   // 배송비
-  shipping_fee: 534,
+  shipping_fee: 3000,
 }
 
 const CartContext = React.createContext()

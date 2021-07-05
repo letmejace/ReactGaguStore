@@ -13,12 +13,12 @@ import {
   About,
   Products,
   PrivateRoute,
-  // AuthWrapper,
+  AuthWrapper,
 } from './pages'
 
 function App() {
   return (
-    // <AuthWrapper>
+    <AuthWrapper>
       <Router>
         {/* Nav, SideBar모두 적용 */}
         <Navbar />
@@ -49,7 +49,7 @@ function App() {
         </Switch>
         <Footer />
       </Router>
-    // </AuthWrapper>
+    </AuthWrapper>
   )
 }
 
