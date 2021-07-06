@@ -13,7 +13,7 @@ This is a ReactGaguStore which can buy furniture
 ## Description 
 
 - Purchase furniture
-- LogIn
+- Login
 - Category
 - Add to Cart
 - Description of product
