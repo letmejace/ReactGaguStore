@@ -10,7 +10,7 @@ This is a ReactGaguStore which can buy furniture
 - HTML  
 - CSS        
 
-## Description 
+## Description  
 
 - Purchase furniture
 - Login
