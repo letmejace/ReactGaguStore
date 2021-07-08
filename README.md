@@ -14,7 +14,7 @@ This is a ReactGaguStore which can buy furniture
 
 - Purchase furniture
 - Login
-- Category
+- Category 
 - Add to Cart
 - Description of product
 
