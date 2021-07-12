@@ -1,5 +1,5 @@
 # ReactGaguStore
-
+  
 This is a ReactGaguStore which can buy furniture
 
   
