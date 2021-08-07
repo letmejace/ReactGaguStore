@@ -11,7 +11,7 @@ This is a ReactGaguStore which can buy furniture
 - CSS          
   
 ## Description      
-   
+    
 - Purchase furniture  
 - Login
 - Category 
