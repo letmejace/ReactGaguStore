@@ -4,7 +4,7 @@ This is a ReactGaguStore which can buy furniture
 
   
 ## Built with:  
-  
+   
 - React    
 - Javascript(ES6)      
 - HTML     
