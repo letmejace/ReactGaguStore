@@ -8,7 +8,7 @@ This is a ReactGaguStore which can buy furniture
 - React    
 - Javascript(ES6)       
 - HTML     
-- CSS            
+- CSS              
   
 ## Description      
     
